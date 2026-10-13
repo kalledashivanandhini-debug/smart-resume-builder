@@ -1,0 +1,399 @@
+
+/* ---------- GLOBAL STYLES ---------- */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #244b83;
+    --primary-dark: #17365f;
+    --accent: #3976c5;
+    --background: #f3f6fc;
+    --text: #263449;
+    --muted: #69778b;
+    --border: #dce4f0;
+    --white: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+/* ---------- TOP HEADER ---------- */
+.top-header {
+    background: linear-gradient(135deg, #17365f, #356cb1);
+    color: var(--white);
+    text-align: center;
+    padding: 38px 16px;
+    box-shadow: 0 5px 20px rgba(23, 54, 95, 0.15);
+}
+
+.top-header h1 {
+    margin: 0;
+    font-size: clamp(27px, 4vw, 36px);
+    letter-spacing: 0.5px;
+}
+
+.top-header p {
+    margin: 8px 0 0;
+    color: #e3edff;
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+.container {
+    width: min(1000px, 94%);
+    margin: 32px auto;
+}
+
+/* ---------- FORM ---------- */
+#resumeForm {
+    background: var(--white);
+    padding: 32px;
+    border: 1px solid #e8edf5;
+    border-radius: 16px;
+    box-shadow: 0 10px 35px rgba(31, 55, 91, 0.07);
+}
+
+#resumeForm h2 {
+    margin-top: 28px;
+    margin-bottom: 18px;
+    padding-bottom: 9px;
+    color: var(--primary-dark);
+    font-size: 20px;
+    border-bottom: 2px solid #e7edf7;
+}
+
+#resumeForm h2:first-child {
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    margin: 15px 0 6px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #35465e;
+}
+
+input,
+textarea {
+    display: block;
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd6e5;
+    border-radius: 8px;
+    font: inherit;
+    font-size: 15px;
+    color: var(--text);
+    background: #fbfcff;
+    transition: border-color 0.2s, box-shadow 0.2s,
+                background 0.2s;
+}
+
+input:hover,
+textarea:hover {
+    border-color: #9eb6d8;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(57, 118, 197, 0.13);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #98a4b5;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+/* ---------- BUTTONS ---------- */
+button {
+    padding: 12px 21px;
+    margin-top: 18px;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary);
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(36, 75, 131, 0.15);
+    transition: background 0.2s, transform 0.2s,
+                box-shadow 0.2s;
+}
+
+button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 5px 12px rgba(36, 75, 131, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:disabled {
+    opacity: 0.65;
+    cursor: wait;
+}
+
+.secondary {
+    background: #68778d;
+}
+
+.secondary:hover {
+    background: #4d5c72;
+}
+
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.action-buttons button {
+    margin-top: 0;
+}
+
+/* ---------- GENERATED RESUME ---------- */
+#resumeOutput {
+    margin-top: 34px;
+}
+
+#resumeOutput[hidden] {
+    display: none;
+}
+
+.resume-paper {
+    background: var(--white);
+    padding: 48px;
+    border: 1px solid #e4eaf3;
+    border-radius: 12px;
+    box-shadow: 0 12px 35px rgba(31, 55, 91, 0.09);
+    overflow-wrap: anywhere;
+}
+
+.resume-header {
+    text-align: center;
+    border-bottom: 3px solid var(--primary);
+    padding-bottom: 22px;
+    margin-bottom: 28px;
+}
+
+.resume-header h1 {
+    margin: 0 0 10px;
+    color: var(--primary-dark);
+    font-size: clamp(25px, 4vw, 34px);
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+}
+
+.resume-header p {
+    margin: 4px 0;
+    color: #536176;
+    font-size: 14px;
+}
+
+/* ---------- RESUME SECTIONS ---------- */
+.resume-section {
+    margin: 27px 0;
+}
+
+.resume-section h2 {
+    font-size: 18px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: var(--primary);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+.resume-section h3 {
+    color: var(--primary-dark);
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.resume-section p {
+    white-space: pre-wrap;
+    margin: 8px 0;
+    line-height: 1.8;
+}
+
+.resume-section ul {
+    padding-left: 23px;
+}
+
+.resume-section li {
+    margin: 6px 0;
+}
+
+.resume-section a {
+    color: #1764b0;
+    overflow-wrap: anywhere;
+    text-decoration: none;
+}
+
+.resume-section a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- PROFILE LINKS ---------- */
+.profile-link {
+    margin: 9px 0;
+    overflow-wrap: anywhere;
+}
+
+.profile-link a {
+    color: #1764b0;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.profile-link a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- STATISTICS ---------- */
+.stats-status {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+#githubStats,
+#leetcodeStats,
+#codechefStats {
+    background: #fbfcff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px;
+}
+
+#githubStats h2,
+#leetcodeStats h2,
+#codechefStats h2 {
+    margin-top: 0;
+}
+
+footer {
+    text-align: center;
+    color: var(--muted);
+    padding: 22px 15px;
+    font-size: 14px;
+}
+
+/* ---------- MOBILE RESPONSIVENESS ---------- */
+@media (max-width: 600px) {
+    .top-header {
+        padding: 28px 14px;
+    }
+
+    .container {
+        width: 94%;
+        margin: 20px auto;
+    }
+
+    #resumeForm,
+    .resume-paper {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .resume-section {
+        margin: 22px 0;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .action-buttons button {
+        width: 100%;
+    }
+}
+
+/* ---------- PRINT / SAVE AS PDF ---------- */
+@media print {
+    @page {
+        size: A4;
+        margin: 15mm;
+    }
+
+    body {
+        background: white;
+        color: black;
+        font-family: Arial, sans-serif;
+        font-size: 10.5pt;
+        line-height: 1.5;
+    }
+
+    .top-header,
+    #resumeForm,
+    .action-buttons,
+    footer {
+        display: none !important;
+    }
+
+    .container {
+        width: 100%;
+        margin: 0;
+    }
+
+    #resumeOutput {
+        display: block !important;
+        margin: 0;
+    }
+
+    .resume-paper {
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .resume-header {
+        border-bottom: 2px solid #333;
+    }
+
+    .resume-header h1,
+    .resume-section h2,
+    .resume-section h3 {
+        color: black;
+    }
+
+    .resume-section,
+    .resume-header {
+        break-inside: avoid;
+    }
+
+    .resume-section a {
+        color: black !important;
+        text-decoration: none;
+    }
+
+    #githubStats,
+    #leetcodeStats,
+    #codechefStats {
+        background: white;
+        border: none;
+        padding: 0;
+    }
+
+    button {
+        display: none !important;
+    }
+}
+

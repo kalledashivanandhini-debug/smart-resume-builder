@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="form-container">
+        <h1>Resume Builder</h1>
+        <p>Enter your details to create your professional resume.</p>
+
+        <form id="resumeForm">
+
+            <h2>Personal Information</h2>
+
+            <label for="name">Full Name</label>
+            <input type="text" id="name"
+                   placeholder="Enter your full name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email"
+                   placeholder="Enter your email" required>
+
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone"
+                   placeholder="Enter your phone number">
+
+            <label for="address">Address</label>
+            <input type="text" id="address"
+                   placeholder="Enter your address">
+
+            <h2>Education</h2>
+
+            <label for="education">Education Details</label>
+            <textarea id="education"
+                      placeholder="Degree, college, year, CGPA"></textarea>
+
+            <h2>Skills</h2>
+
+            <label for="skills">Technical Skills</label>
+            <textarea id="skills"
+                      placeholder="Java, C++, Python, HTML, CSS..."></textarea>
+
+            <h2>Experience</h2>
+
+            <label for="experience">Experience / Achievements</label>
+            <textarea id="experience"
+                      placeholder="Internships, volunteering, certifications or achievements"></textarea>
+
+            <h2>Projects</h2>
+
+            <label for="projects">Project Details</label>
+            <textarea id="projects"
+                      placeholder="Project name, technologies and description"></textarea>
+
+            <h2>Coding and Professional Profiles</h2>
+
+            <label for="github">GitHub Profile URL</label>
+            <input type="url" id="github"
+                   placeholder="https://github.com/yourusername">
+
+            <label for="linkedin">LinkedIn Profile URL</label>
+            <input type="url" id="linkedin"
+                   placeholder="https://www.linkedin.com/in/yourusername/">
+
+            <label for="leetcode">LeetCode Profile URL</label>
+            <input type="url" id="leetcode"
+                   placeholder="https://leetcode.com/u/yourusername/">
+
+            <label for="codechef">CodeChef Profile URL</label>
+            <input type="url" id="codechef"
+                   placeholder="https://www.codechef.com/users/yourusername">
+
+            <button type="submit">Generate Resume</button>
+
+        </form>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
