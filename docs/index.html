@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Resume Builder</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <header class="top-header">
+        <h1>Smart Resume Builder</h1>
+        <p>Create your resume and showcase your coding achievements.</p>
+    </header>
+
+    <main class="container">
+        <form id="resumeForm">
+            <h2>Personal Information</h2>
+
+            <label for="name">Full Name *</label>
+            <input id="name" type="text" placeholder="Your full name" required>
+
+            <label for="email">Email *</label>
+            <input id="email" type="email" placeholder="you@example.com" required>
+
+            <label for="phone">Phone Number</label>
+            <input id="phone" type="tel" placeholder="Your phone number">
+
+            <h2>Profile Links</h2>
+
+            <label for="github">GitHub Profile URL</label>
+            <input id="github" type="url" placeholder="https://github.com/username">
+
+            <label for="linkedin">LinkedIn Profile URL</label>
+            <input id="linkedin" type="url" placeholder="https://www.linkedin.com/in/username">
+
+            <label for="leetcode">LeetCode Profile URL</label>
+            <input id="leetcode" type="url" placeholder="https://leetcode.com/u/username/">
+
+            <label for="codechef">CodeChef Profile URL</label>
+            <input id="codechef" type="url" placeholder="https://www.codechef.com/users/username">
+
+            <h2>Education</h2>
+            <textarea id="education" rows="4"
+                placeholder="Degree, college, graduation year, CGPA"></textarea>
+
+            <h2>Skills</h2>
+            <textarea id="skills" rows="3"
+                placeholder="C++, Java, Python, HTML, CSS..."></textarea>
+
+            <h2>Experience</h2>
+            <textarea id="experience" rows="4"
+                placeholder="Internships, volunteering or relevant experience"></textarea>
+
+            <h2>Projects</h2>
+            <textarea id="projects" rows="4"
+                placeholder="Project name, technologies and what you built"></textarea>
+
+            <button type="submit" id="generateButton">Generate Resume</button>
+        </form>
+
+        <section id="resumeOutput" hidden>
+            <div class="action-buttons">
+                <button type="button" id="editButton" class="secondary">
+                    Edit Details
+                </button>
+                <button type="button" id="printButton">
+                    Print / Save as PDF
+                </button>
+            </div>
+
+            <div id="resumeContent"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Smart Resume Builder | Built with HTML, CSS and JavaScript</p>
+    </footer>
+</body>
+</html>
